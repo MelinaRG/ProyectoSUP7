@@ -3,10 +3,8 @@ import pandas as pd
 
 st.write ("""
 # Hola chiquis
-## Fede gorra
-probando *boludeces* 
+## Analizando a *Fede*
 
 """)
 
-age = st.slider('How old are you?', 0, 130, 25)
-st.write("I'm ", age, 'years old')
+a = st.slider('Que tan crack es fede? (1-5 es re cobani, 5-10 es un crack)' , 0, 100, 25)
