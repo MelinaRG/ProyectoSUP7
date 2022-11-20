@@ -3,7 +3,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import db_postgres
+from db_postgres import create_user
 
 app = FastAPI()
 
@@ -33,6 +33,7 @@ async def post_form (request: Request, nombre: str = Form(...),
             '''Pongo el print para ver por consola como se va cargando la lista'''            
 
             print(lista)
+            create_user(lista)
 
             return 'Gracias por responder'
 
