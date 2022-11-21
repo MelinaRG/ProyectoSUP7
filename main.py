@@ -17,14 +17,14 @@ async def get_form(request: Request):
         "message": "Hola gente, por favor completa tus datos"
     })
 
-lista = []
-
 @app.post("/add_contact", response_class=HTMLResponse)
 async def post_form (request: Request, nombre: str = Form(...), 
             apellido: str = Form(...), 
             edad: int = Form(...),
             email: str = Form(...),):
             
+            lista = []
+
             lista.append(nombre)
             lista.append(apellido)
             lista.append(edad)
