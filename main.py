@@ -32,7 +32,7 @@ async def post_form (request: Request, nombre: str = Form(...),
 
             '''Pongo el print para ver por consola como se va cargando la lista'''            
 
-            print(lista)
+            #print(lista)
             create_user(lista)
 
             return 'Gracias por responder'
