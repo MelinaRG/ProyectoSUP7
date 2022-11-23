@@ -13,8 +13,7 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
     return templates.TemplateResponse("index.html", {
-        "request": request,
-        "message": "Hola gente, por favor completa tus datos"
+        "request": request
     })
 
 @app.post("/add_contact", response_class=HTMLResponse)
