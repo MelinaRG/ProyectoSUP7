@@ -1,18 +1,121 @@
-.container {
-    font-family: Arial, Helvetica, sans-serif;
-    color:steelblue;
-    text-align: center;
-    width: 100%;
+
+/*FORM CSS*/
+
+.form form{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 
 }
 
-.form {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    width: 100%;
+.pregunta-form{
+    display:grid;
+    margin-top: 12px;
+    grid-column: 3/4;
 }
 
-.form1 {
-    font-family: Arial, Helvetica, sans-serif;
+.boton-form{
+    margin-top: 30px;
+    grid-column: 3/5;
+    display: flex;
+    background: #e7dc3f;
+    height: 80%;
+    width: 50%;
+    font-weight: bold;
     text-align: center;
-    width: 30%;
+    cursor: pointer;
+    border: none;
+    border-radius: 120px;
+    justify-content: center;
 }
+
+
+/*FORM CSS*/
+
+/*NAV CSS*/
+
+*{
+    font-family: Poppins, sans serif;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.boton-nav:first-child{
+    grid-row: 4 / 5;
+    grid-colum-start: 5;
+    grid-column-end: 6;
+}
+
+.boton-nav:nth-child(2){
+    grid-row: 4 / 5;
+    grid-colum-start: 6;
+    grid-column-end: 7;
+}
+
+.boton-nav:nth-child(3){
+    grid-row: 4 / 5;
+    grid-colum-start: 7;
+    grid-column-end: 8;
+}
+
+.boton-nav:nth-child(4){
+    grid-row: 4 / 5;
+    grid-colum-start: 8;
+    grid-column-end: 9;
+}
+
+.boton-nav:nth-child(5){
+    grid-row: 4 / 5;
+    grid-colum-start: 9;
+    grid-column-end: 10;
+}
+
+.logo{
+    margin: 1em;
+    grid-row: 1 / end;
+    grid-colum-start: 1;
+    grid-column-end: 2;
+}
+
+.boton-nav{
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    background: #e7dc3f;
+    height: 150%;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 120px;
+    justify-content: center;
+}
+
+  .nav-enlace{
+    color: #2b2b2b;
+    text-decoration: none;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+/*NAV CSS*/
+
+/*MAIN CSS*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-image: url("https://i.imgur.com/19NMxH8.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*MAIN CSS*/
