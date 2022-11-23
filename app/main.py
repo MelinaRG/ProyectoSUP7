@@ -18,17 +18,34 @@ async def get_form(request: Request):
     })
 
 @app.post("/add_contact", response_class=HTMLResponse)
-async def post_form (request: Request, nombre: str = Form(...),
+async def post_form (request: Request, 
+            grupo_sup: int = Form(...),
+            nombre: str = Form(...),
             apellido: str = Form(...),
             edad: int = Form(...),
-            email: str = Form(...),):
+            email: str = Form(...),
+            nacionalidad: str = Form(...),
+            pais_residencia: str = Form(...),
+            ocupacion: str = Form(...),
+            dispositivo: str = Form(...),
+            mic_y_cam: str = Form(...),
+            funcion_sup: str = Form(...),
+            gustos_sup: str = Form(...)):
             
             lista = []
 
+            lista.append(grupo_sup)
             lista.append(nombre)
             lista.append(apellido)
             lista.append(edad)
             lista.append(email)
+            lista.append(nacionalidad)
+            lista.append(pais_residencia)
+            lista.append(ocupacion)
+            lista.append(dispositivo)
+            lista.append(mic_y_cam)
+            lista.append(funcion_sup)
+            lista.append(gustos_sup)
 
             create_user(lista)
 
