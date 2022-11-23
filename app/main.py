@@ -30,7 +30,7 @@ async def post_form (request: Request,
             mic_y_cam: str = Form(...),
             funcion_sup: str = Form(...),
             gustos_sup: str = Form(...),):
-            print("hola cualquier cosa")
+
             lista = []
 
             lista.append(grupo_sup)
@@ -47,7 +47,7 @@ async def post_form (request: Request,
             lista.append(gustos_sup)
 
             create_user(lista)
-            print(lista)
+
             return 'Gracias por responder'
 
 if __name__ == '__main__':
