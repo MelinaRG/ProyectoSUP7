@@ -48,7 +48,7 @@ async def post_form (request: Request,
             lista.append(gustos_sup)
 
             create_user(lista)
-
+            print(lista)
             return 'Gracias por responder'
 
 if __name__ == '__main__':
