@@ -30,7 +30,7 @@ async def post_form (request: Request,
             dispositivo: str = Form(...),
             mic_y_cam: str = Form(...),
             funcion_sup: str = Form(...),
-            gustos_sup: str = Form(...)):
+            gustos_sup: str = Form(...),):
             
             lista = []
 
