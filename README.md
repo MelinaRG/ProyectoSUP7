@@ -20,4 +20,4 @@ Info necesaria:
 Herramientas:
 Formularios de encuestas rápidas (V ó F / opción múltiple)
  
- hola
+
