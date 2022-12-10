@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Juegos</title>
-	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-	<!-- <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet"> -->
+	<title>Registro users</title>
+	<link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
 </head>
 <body>
-	<header class="hero">
 		<nav class="nav container">
 			<div class="nav__logo">
 				<h2 class="nav__title">TA TOOLS</h2>
@@ -35,6 +35,17 @@
 				</li>
 			</ul>
 		</nav>
-	</header>
+	
+
+	<div class="form-registro">
+		<div class="form__registro__title"><h2>Registro de usuarios<br>para administrador</h2></div>
+		<form action="/registro_usuario" method="POST">
+			<p class="pregunta_form_registro">Nombre <input type="text" name="nombre" placeholder="Nombre" required=""></p>
+			<p class="pregunta_form_registro">Apellido <input type="text" name="apellido" placeholder="Apellido" required></p>
+			<p class="pregunta_form_registro">Mail <input type="email" name="email" placeholder="email@gmail.com" required></p>
+			<p class="pregunta_form_registro">Contraseña<input type="password" name="contrasenia" placeholder="********" required></p>
+			<input type="submit" name="submit" class="boton_form_registro" value='Registrar usuario'>
+		</form>
+	</div>
 </body>
 </html>
