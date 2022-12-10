@@ -9,7 +9,7 @@ En esta parte del desarrollo la idea es diseñar juegos didácticos relacionados
 Idealmente serían juegos que incluyan una dinámica grupal, hosteados en un server de Firebase y que no requieran de
 ninguna instalación previa.
 
-Stack de herramientas utilizadas en el proyecto:
+Stack de herramientas utilizadas en este segmento del proyecto:
 
 -          Firebase
 -          JavaScript
