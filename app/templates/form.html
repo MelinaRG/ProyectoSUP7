@@ -3,6 +3,7 @@
 <head>
 	<title>Form Alumnos</title>
 	<link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -34,52 +35,54 @@
 				</li>
 			</ul>
 		</nav>
+		<div class="form__title__form"><h2 style="text-align: center;">Formulario</h2></div>
+		<div class="form">
+			<form action="/add_contact" method="POST">
+				<p class="pregunta-form">¿Cuál es tu grupo de SUP? <input class= "input_select" type="number" name="grupo_sup" placeholder="7" required=""></p>
+				<p class="pregunta-form">Nombre <input class= "input_select" type="text" name="nombre" placeholder="Nombre" required=""></p>
+				<p class="pregunta-form">Apellido <input class= "input_select" type="text" name="apellido" placeholder="Apellido" required></p>
+				<p class="pregunta-form">Edad <input class= "input_select" type="number" name="edad" placeholder="Edad" required></p>
+				<p class="pregunta-form">Mail <input class= "input_select" type="email" name="email" placeholder="email@gmail.com" required></p>
+				<p class="pregunta-form">Nacionalidad <input class= "input_select" type="text" name="nacionalidad" placeholder="Argentina" required></p>
+				<p class="pregunta-form">País de residencia <input class= "input_select" type="text" name="pais_residencia" placeholder="Argentina" required></p>
+				<p class="pregunta-form">¿Trabaja y estudia?
+					   <select class= "input_select" name="ocupacion">
+					     <option>Trabajo y estudio</option>
+					     <option>Solo estudio</option>
+					   </select></p>
+				<p class="pregunta-form">¿Desde qué dispositivo se conecta al SUP? 
+					<select class= "input_select" name="dispositivo">
+					     <option>PC o notebook</option>
+					     <option>Celular, tablet o similar</option>
+					   </select>
+				<p class="pregunta-form">¿Tiene micrófono y cámara? <select class= "input_select" name="mic_y_cam">
+					     <option>Si, tengo ambos</option>
+					     <option>Solo micrófono</option>
+					     <option>Solo cámara</option>
+					     <option>Ninguno</option>
+					   </select></p>
+				<p class="pregunta-form">¿Cuál cree que es la función del SUP? <select class= "input_select" name="funcion_sup">
+					     <option>Resolver dudas administrativas</option>
+					     <option>Revisar la homework</option>
+					     <option>Desarrollar las soft skills</option>
+					     <option>Conocer compañeros</option>
+					     <option>Jugar, charlar de la vida</option>
+					     <option>No lo tengo en claro</option>
+					   </select></p>
+				<p class="pregunta-form">¿Qué le gustaría hacer durante el SUP? <select class= "input_select" name="gustos_sup">
+					     <option>Resolver dudas administrativas</option>
+					     <option>Revisar la homework</option>
+					     <option>Desarrollar las soft skills</option>
+					     <option>Conocer compañeros</option>
+					     <option>Jugar, charlar de la vida</option>
+					     <option>No lo tengo en claro</option>
+					     <option>Nada, sólo asisto porque es obligatorio</option>
+					   </select></p>
+				<input type="submit" name="submit" class="boton-form" value='Enviar el formulario'>
+			</form>
+		</div>
 	</header>
 
-	<div class="form">
-		<form action="/add_contact" method="POST">
-			<p class="pregunta-form">¿Cuál es tu grupo de SUP? <input type="number" name="grupo_sup" placeholder="7" required=""></p>
-			<p class="pregunta-form">Nombre <input type="text" name="nombre" placeholder="Nombre" required=""></p>
-			<p class="pregunta-form">Apellido <input type="text" name="apellido" placeholder="Apellido" required></p>
-			<p class="pregunta-form">Edad <input type="number" name="edad" placeholder="Edad" required></p>
-			<p class="pregunta-form">Mail <input type="email" name="email" placeholder="email@gmail.com" required></p>
-			<p class="pregunta-form">Nacionalidad <input type="text" name="nacionalidad" placeholder="Argentina" required></p>
-			<p class="pregunta-form">País de residencia <input type="text" name="pais_residencia" placeholder="Argentina" required></p>
-			<p class="pregunta-form">¿Trabaja y estudia?
-				   <select name="ocupacion">
-				     <option>Trabajo y estudio</option>
-				     <option>Solo estudio</option>
-				   </select></p>
-			<p class="pregunta-form">¿Desde qué dispositivo se conecta al SUP? 
-				<select name="dispositivo">
-				     <option>PC o notebook</option>
-				     <option>Celular, tablet o similar</option>
-				   </select>
-			<p class="pregunta-form">¿Tiene micrófono y cámara? <select name="mic_y_cam">
-				     <option>Si, tengo ambos</option>
-				     <option>Solo micrófono</option>
-				     <option>Solo cámara</option>
-				     <option>Ninguno</option>
-				   </select></p>
-			<p class="pregunta-form">¿Cuál cree que es la función del SUP? <select name="funcion_sup">
-				     <option>Resolver dudas administrativas</option>
-				     <option>Revisar la homework</option>
-				     <option>Desarrollar las soft skills</option>
-				     <option>Conocer compañeros</option>
-				     <option>Jugar, charlar de la vida</option>
-				     <option>No lo tengo en claro</option>
-				   </select></p>
-			<p class="pregunta-form">¿Qué le gustaría hacer durante el SUP? <select name="gustos_sup">
-				     <option>Resolver dudas administrativas</option>
-				     <option>Revisar la homework</option>
-				     <option>Desarrollar las soft skills</option>
-				     <option>Conocer compañeros</option>
-				     <option>Jugar, charlar de la vida</option>
-				     <option>No lo tengo en claro</option>
-				     <option>Nada, sólo asisto porque es obligatorio</option>
-				   </select></p>
-			<input type="submit" name="submit" class="boton-form" value='Enviar el formulario'>
-		</form>
-	</div>
+	
 </body>
 </html>

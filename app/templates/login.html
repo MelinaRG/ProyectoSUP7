@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+</head>
+<body>
+		<nav class="nav container">
+			<div class="nav__logo">
+				<h2 class="nav__title">TA TOOLS</h2>
+			</div>
+			<ul class="nav__link nav__link--menu">
+				<li class="nav__items">
+					<a href="/" class="nav__links" id="boton__inicio">Inicio</a>
+				</li>
+				<!-- <li class="nav__items">
+					<a href="/form" class="nav__links" id="boton__form">Form</a>
+				</li> -->
+				<li class="nav__items">
+					<a href="/juegos" class="nav__links">Juegos</a>
+				</li>
+				<li class="nav__items">
+					<a href="/juegos" class="nav__links">Temas</a>
+				</li>
+				<!-- <li class="nav__items">
+					<a href="/datos" class="nav__links">Datos</a>
+				</li> -->
+				<li class="nav__items">
+					<a href="/login" class="nav__links">Login</a>
+				</li>
+			</ul>
+		</nav>
+	
+
+	<div class="form-registro">
+		<div class="form__registro__title__login"><h2 style="text-align: center;">Login</h2></div>
+		<form action="/ingreso_usuario" method="POST">
+			<p class="pregunta_form_registro">Mail <input type="email" name="email" placeholder="email@gmail.com" required></p>
+			<p class="pregunta_form_registro">Contraseña<input type="password" name="contrasenia" placeholder="********" required></p>
+			<input type="submit" name="submit" class="boton_form_login" value='Ingresar'>
+		</form>
+	</div>
+</body>
+</html>

@@ -55,10 +55,10 @@ body{
 .nav__link{
     margin-left: auto;
     padding: 0;
-    display:grid;
+    display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    gap:1em;
+    gap: 1em;
 
 }
 
@@ -74,7 +74,7 @@ body{
 
 
 .nav__links{
-    color:#2b2b2b;;
+    color:#2b2b2b;
     text-decoration: none;
 }
 
@@ -124,13 +124,17 @@ body{
 	display:grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: 1fr;
-  align-content: 
 }
 
 .pregunta-form{
 	display:grid;
 	margin-top: 12px;
 	grid-column: 3/4;
+  color: black;
+}
+
+.input_select{
+  margin-top:7px;
 }
 
 .boton-form{
@@ -148,9 +152,21 @@ body{
 	justify-content: center;
 }
 
+.form__title__form{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #e7dc3f;
+  margin: 30px auto;
+  width: 27%;
+  border-radius: 25px;
+}
 
+.form__title__form h2{
+  color:#2b2b2b;
+  grid-column: 3/4;
+}
 
-/*FORM CSS*/
+/*FORM REGISTRO CSS*/
 .form-registro form{
   display:grid;
   grid-template-columns: repeat(5, 1fr);
@@ -193,13 +209,36 @@ body{
 /*SECCION REGISTRO*/
 
 
+/* LOGIN */
 
+.form__registro__title__login{
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #e7dc3f;
+  margin: 30px auto;
+  width: 20%;
+  border-radius: 25px;
+}
 
+.form__registro__title__login h2{
+  color:#2b2b2b;
+  grid-column: 3/4;
+}
 
-
-
-
-
+.boton_form_login{
+  margin-top: 30px;
+  grid-column: 3/5;
+  display: flex;
+  background: #e7dc3f;
+  height: 80%;
+  width: 50%;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 120px;
+  justify-content: center;
+}
 
 
 
