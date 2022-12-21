@@ -13,6 +13,6 @@ Info necesaria:
 -          Sugerencias que tengan para aplicar a futuro.
 
 Herramientas:
-Formularios de encuestas rápidas (V ó F / opción múltiple)
+Formularios de encuestas rápidas (V ó F / opción múltiple).
  
 
