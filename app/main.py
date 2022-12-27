@@ -28,8 +28,8 @@ async def juegos(request: Request):
         "request": request
         })
 
-@app.get("/login", response_class=HTMLResponse)
-async def loginx(request: Request):
+@app.get("/temas", response_class=HTMLResponse)
+async def temas(request: Request):
     return templates.TemplateResponse("login.html",{
         "request": request
         })
