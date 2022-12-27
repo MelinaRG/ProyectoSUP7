@@ -16,6 +16,24 @@ async def get_form(request: Request):
         "request": request
     })
 
+@app.get("/login", response_class=HTMLResponse)
+async def loginx(request: Request):
+    return templates.TemplateResponse("login.html",{
+        "request": request
+        })
+
+@app.get("/juegos", response_class=HTMLResponse)
+async def juegos(request: Request):
+    return templates.TemplateResponse("temas.html",{
+        "request": request
+        })
+
+@app.get("/login", response_class=HTMLResponse)
+async def loginx(request: Request):
+    return templates.TemplateResponse("login.html",{
+        "request": request
+        })
+
 @app.post("/add_contact", response_class=HTMLResponse)
 async def post_form (request: Request, 
             grupo_sup: int = Form(...),
