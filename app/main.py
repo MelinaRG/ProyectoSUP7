@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from scripts.db_postgres import create_user
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -70,3 +71,45 @@ async def post_form (request: Request,
 
 if __name__ == '__main__':
     uvicorn.run(app, port=80)
+
+
+import os
+import psycopg2
+
+# Crea la conexión a la base de datos PostgreSQL
+conn = psycopg2.connect(
+    DBNAME = os.environ["DBNAME"],
+    DBUSER = os.environ["DBUSER"],
+    DBKEY = os.environ["DBKEY"],
+    DBHOST = os.environ["DBHOST"],
+    DBPORT = os.environ["DBPORT"]
+)
+
+# Define el modelo de datos para la información de inicio de sesión
+class LoginData(BaseModel):
+    username: str
+    password: int
+
+# Crea una ruta para manejar las solicitudes de inicio de sesión
+@app.post("/login")
+async def login(data: LoginData):
+    # Obtiene los datos de inicio de sesión de la solicitud
+    username = data.username
+    password = data.password
+
+    # Realiza una consulta SELECT para obtener la información de usuario de la tabla
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM Ta WHERE email = %s', (username,))
+    result = cursor.fetchone()
+
+    # Si no se encontró un usuario con ese nombre, devuelve un código de estado HTTP 401 y un mensaje de error
+    if result is None:
+        return {"error": "Invalid username or password"}, 401
+
+    # Compara la contraseña hasheada almacenada con la contraseña enviada por el cliente
+    if password == result[4]:
+        # Si la contraseña es correcta, devuelve un código de estado HTTP 200 y un mensaje de éxito
+        return {"message": "Login successful"}
+    else:
+        # Si la contraseña es incorrecta, devuelve un código de estado HTTP 401 y un mensaje de error
+        return {"error": "Invalid username or password"}, 401
