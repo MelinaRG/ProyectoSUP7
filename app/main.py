@@ -24,13 +24,13 @@ async def loginx(request: Request):
 
 @app.get("/juegos", response_class=HTMLResponse)
 async def juegos(request: Request):
-    return templates.TemplateResponse("temas.html",{
+    return templates.TemplateResponse("juegos.html",{
         "request": request
         })
 
 @app.get("/temas", response_class=HTMLResponse)
 async def temas(request: Request):
-    return templates.TemplateResponse("login.html",{
+    return templates.TemplateResponse("temas.html",{
         "request": request
         })
 
