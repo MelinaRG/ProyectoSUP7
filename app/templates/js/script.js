@@ -23,8 +23,7 @@ fetch('/ingreso_usuario', {
       window.location.replace('/');
     } else {
       // Si la solicitud no fue exitosa, muestra un mensaje de error al usuario
-      const errorMessage = document.getElementById('error-message');
-      errorMessage.textContent = 'Nombre de usuario o contraseña incorrectos';
+      alert('Nombre de usuario o contraseña incorrectos');
     }
   })
   .catch(error => {
