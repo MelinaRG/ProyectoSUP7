@@ -1,3 +1,5 @@
+
+console.log('hola fede')
 // Obtiene los valores de los campos de inicio de sesión
 
 const username = document.getElementById('username').value;
