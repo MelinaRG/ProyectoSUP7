@@ -1,5 +1,7 @@
-from peewee import PostgresqlDatabase, Model, CharField, IntegerField, IntegrityError
+from peewee import Model, CharField, IntegerField, IntegrityError
 import os
+import psycopg2
+
 
 DBNAME = os.environ["DBNAME"]
 DBUSER = os.environ["DBUSER"]
@@ -7,12 +9,19 @@ DBKEY = os.environ["DBKEY"]
 DBHOST = os.environ["DBHOST"]
 DBPORT = os.environ["DBPORT"]
 
-db = PostgresqlDatabase(DBNAME,user = DBUSER, password = DBKEY, host = DBHOST, port = DBPORT)
-db.close()
+conn = psycopg2.connect(
+    host=DBHOST,
+    database=DBNAME,
+    user=DBUSER,
+    password=DBKEY,
+    port= DBPORT
+)
+conn.close()
 
+#Formulario
 class sup_db(Model):
     class Meta:
-        database = db
+        database = conn
 
 class Usuario(sup_db):
     grupo_sup = IntegerField()
@@ -29,9 +38,9 @@ class Usuario(sup_db):
     gustos_sup = CharField()
 
 def create_user(lista):
-    db.connect()
+    conn.connect()
     try:
-        with db.atomic():
+        with conn.atomic():
             Usuario.create(
                 grupo_sup = lista[0],
                 nombre = lista[1],
@@ -48,4 +57,4 @@ def create_user(lista):
             )
     except IntegrityError:
         print(f'¡Ese correo ya se encuentra registrado! Por favor, intente nuevamente con un nuevo correo.')
-    db.close()
+    conn.close()
