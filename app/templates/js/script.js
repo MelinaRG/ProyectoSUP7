@@ -5,7 +5,7 @@ const password = document.getElementById('password').value;
 
 // Envía la solicitud POST al servidor
 
-fetch('/login', {
+fetch('/ingreso_usuario', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
