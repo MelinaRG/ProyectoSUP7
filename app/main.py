@@ -42,6 +42,8 @@ def load_user(username:str):
         return user_dict
     else:
         return None
+conn.close()
+
     
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
