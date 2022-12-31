@@ -29,7 +29,7 @@ def load_user(username:str):
     cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
     
     result = cursor.fetchone()
-    
+    cursor.close()
     conn.close()
     
     if result:
