@@ -9,6 +9,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from fastapi_login import LoginManager 
 from fastapi_login.exceptions import InvalidCredentialsException 
 from datetime import timedelta
+import psycopg2
 
 app = FastAPI()
 
@@ -23,7 +24,10 @@ manager.cookie_name = "some-name"
 
 @manager.user_loader()
 def load_user(username:str):
+    conn = None
     
+    conn = psycopg2.connect()
+
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
@@ -40,12 +44,9 @@ def load_user(username:str):
         }
     
         return user_dict
-    else:
-
-        cursor.close()
-        conn.close()
-    
-        return None
+    cursor.close()
+    conn.close()
+   
 
 
     

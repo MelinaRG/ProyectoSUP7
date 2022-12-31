@@ -17,7 +17,6 @@ conn = psycopg2.connect(
     port= DBPORT
 )
 
-conn.close()
 
 #Formulario
 class sup_db(Model):
