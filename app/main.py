@@ -55,6 +55,24 @@ async def loginx(request: Request):
         "request": request
         })
 
+@app.post("/auth/login")
+def login(data: OAuth2PasswordRequestForm = Depends()):
+    username = data.username
+    password = data.password
+    user = load_user(username)
+    if not user:
+        raise InvalidCredentialsException
+    elif password != user['pw']:
+        raise InvalidCredentialsException
+    access_token = manager.create_access_token(
+        data={"sub":username},
+        expires=timedelta(hours=1)
+    )
+    resp = RedirectResponse(url="/juegos",status_code=status.HTTP_302_FOUND)
+    manager.set_cookie(resp,access_token)
+    return resp
+
+
 @app.get("/juegos", response_class=HTMLResponse, _=Depends(manager))
 async def juegos(request: Request):
     return templates.TemplateResponse("juegos.html",{
@@ -100,27 +118,6 @@ async def post_form (request: Request,
             create_user(lista)
 
             return 'Gracias por responder'
-
-
-
-
-
-@app.post("/auth/login")
-def login(data: OAuth2PasswordRequestForm = Depends()):
-    username = data.username
-    password = data.password
-    user = load_user(username)
-    if not user:
-        raise InvalidCredentialsException
-    elif password != user['pw']:
-        raise InvalidCredentialsException
-    access_token = manager.create_access_token(
-        data={"sub":username},
-        expires=timedelta(hours=1)
-    )
-    resp = RedirectResponse(url="/juegos",status_code=status.HTTP_302_FOUND)
-    manager.set_cookie(resp,access_token)
-    return resp
 
 
 if __name__ == '__main__':
