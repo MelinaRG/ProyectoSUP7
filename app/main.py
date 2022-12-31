@@ -45,15 +45,15 @@ def load_user(username:str):
     
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
-    return templates.TemplateResponse("index.html", {
+    return templates.TemplateResponse("login.html", {
         "request": request
     })
 
-@app.get("/login", response_class=HTMLResponse)
-async def loginx(request: Request):
-    return templates.TemplateResponse("login.html",{
+@app.get("/index", response_class=HTMLResponse)
+async def get_form(request: Request):
+    return templates.TemplateResponse("index.html", {
         "request": request
-        })
+    })
 
 @app.post("/auth")
 def login(data: OAuth2PasswordRequestForm = Depends()):
@@ -68,7 +68,7 @@ def login(data: OAuth2PasswordRequestForm = Depends()):
         data={"sub":username},
         expires=timedelta(hours=1)
     )
-    resp = RedirectResponse(url="/juegos",status_code=status.HTTP_302_FOUND)
+    resp = RedirectResponse(url="/index",status_code=status.HTTP_302_FOUND)
     manager.set_cookie(resp,access_token)
     return resp
 
@@ -80,6 +80,24 @@ async def juegos(request: Request, user=Depends(manager)):
         })
 
 @app.get("/temas", response_class=HTMLResponse)
+async def temas(request: Request, user=Depends(manager)):
+    return templates.TemplateResponse("temas.html",{
+        "request": request
+        })
+
+@app.get("/form", response_class=HTMLResponse)
+async def temas(request: Request, user=Depends(manager)):
+    return templates.TemplateResponse("form.html",{
+        "request": request
+        })
+
+@app.get("/datos", response_class=HTMLResponse)
+async def temas(request: Request, user=Depends(manager)):
+    return templates.TemplateResponse("temas.html",{
+        "request": request
+        })
+
+@app.get("/asistencia", response_class=HTMLResponse)
 async def temas(request: Request, user=Depends(manager)):
     return templates.TemplateResponse("temas.html",{
         "request": request
