@@ -29,9 +29,7 @@ def load_user(username:str):
     cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
     
     result = cursor.fetchone()
-    cursor.close()
-    conn.close()
-    
+   
     if result:
         user_dict = {
             "nombre": result[1],
@@ -43,6 +41,10 @@ def load_user(username:str):
     
         return user_dict
     else:
+
+        cursor.close()
+        conn.close()
+    
         return None
 
 
