@@ -24,10 +24,7 @@ manager.cookie_name = "some-name"
 
 @manager.user_loader()
 def load_user(username:str):
-    conn = None
     
-    conn = psycopg2.connect()
-
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
@@ -45,7 +42,7 @@ def load_user(username:str):
     
         return user_dict
     cursor.close()
-    conn.close()
+    
    
 
 
