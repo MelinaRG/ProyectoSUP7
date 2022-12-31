@@ -73,14 +73,14 @@ def login(data: OAuth2PasswordRequestForm = Depends()):
     return resp
 
 
-@app.get("/juegos", response_class=HTMLResponse, _=Depends(manager))
-async def juegos(request: Request):
+@app.get("/juegos", response_class=HTMLResponse)
+async def juegos(request: Request, user=Depends(manager)):
     return templates.TemplateResponse("juegos.html",{
         "request": request
         })
 
-@app.get("/temas", response_class=HTMLResponse, _=Depends(manager))
-async def temas(request: Request):
+@app.get("/temas", response_class=HTMLResponse)
+async def temas(request: Request, user=Depends(manager)):
     return templates.TemplateResponse("temas.html",{
         "request": request
         })
