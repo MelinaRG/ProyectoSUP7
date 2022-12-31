@@ -5,6 +5,7 @@ console.log('hola fede')
 
 const username = document.getElementById('username').value;
 const password = document.getElementById('password').value;
+console.log(username, password);
 
 // Envía la solicitud POST al servidor
 
