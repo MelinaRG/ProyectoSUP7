@@ -1,3 +1,4 @@
+const iduser = () => {
 
 console.log('hola fede')
 // Obtiene los valores de los campos de inicio de sesión
@@ -29,3 +30,7 @@ fetch('/ingreso_usuario', {
   .catch(error => {
     console.error(error);
   });
+
+} 
+const form = document.getElementById('form');
+form.addEventListener('submit', iduser);
