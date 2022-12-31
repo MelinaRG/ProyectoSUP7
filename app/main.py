@@ -17,7 +17,7 @@ templates = Jinja2Templates(directory="templates")
 
 SECRET = "c67b468dd8b0055b207c639cc268ab63632427e47d3818eb"
 
-manager = LoginManager(SECRET,'/auth/login',use_cookie=True)
+manager = LoginManager(SECRET,'/auth',use_cookie=True)
 manager.cookie_name = "some-name"
 
 
@@ -55,7 +55,7 @@ async def loginx(request: Request):
         "request": request
         })
 
-@app.post("/auth/login")
+@app.post("/auth")
 def login(data: OAuth2PasswordRequestForm = Depends()):
     username = data.username
     password = data.password
