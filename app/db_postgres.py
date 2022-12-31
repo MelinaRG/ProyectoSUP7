@@ -57,6 +57,6 @@ def create_user(lista):
             )
     except IntegrityError:
         print(f'¡Ese correo ya se encuentra registrado! Por favor, intente nuevamente con un nuevo correo.')
-    conn.close()
+   
 
 
