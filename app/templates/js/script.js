@@ -14,10 +14,10 @@ fetch('/ingreso_usuario', {
   headers: {
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify({
-    username,
-    password
-  })
+  body: {
+    username : username,
+    password : password
+  }
 })
   .then(response => {
     // Si la solicitud fue exitosa, redirige al usuario a la página principal
