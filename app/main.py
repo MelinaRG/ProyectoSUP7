@@ -1,18 +1,14 @@
 import uvicorn
-from fastapi import FastAPI, Request, Form, Depends, HTTPException, status, Request
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request, Form, Depends, status, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from db_postgres import conn 
 from db_postgres import create_user
-from fastapi import FastAPI, Depends,status, Request 
 from fastapi.responses import RedirectResponse,HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi_login import LoginManager 
 from fastapi_login.exceptions import InvalidCredentialsException 
-from fastapi.templating import Jinja2Templates
 from datetime import timedelta
-import psycopg2
 
 app = FastAPI()
 
