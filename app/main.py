@@ -108,7 +108,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     return user
 
 
-@app.post("/login")
+@app.post("/ingreso_usuario")
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
   
     cursor = conn.cursor()
