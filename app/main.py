@@ -29,7 +29,7 @@ def load_user(username:str):
     cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
     
     result = cursor.fetchone()
-
+    
     if result:
         user_dict = {
             "nombre": result[1],
@@ -42,7 +42,7 @@ def load_user(username:str):
         return user_dict
     else:
         return None
-
+    
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
     return templates.TemplateResponse("index.html", {
@@ -120,7 +120,5 @@ async def post_form (request: Request,
             return 'Gracias por responder'
 
 
-if __name__ == '__main__':
-    uvicorn.run(app, port=80)
 
 
