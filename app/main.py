@@ -3,15 +3,49 @@ from fastapi import FastAPI, Request, Form, Depends, HTTPException, status, Requ
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from scripts.db_postgres import create_user
-from scripts.db_postgres import conn
-from pydantic import BaseModel
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from db_postgres import conn 
+from db_postgres import create_user
+from fastapi import FastAPI, Depends,status, Request 
+from fastapi.responses import RedirectResponse,HTMLResponse
+from fastapi.security import OAuth2PasswordRequestForm
+from fastapi_login import LoginManager 
+from fastapi_login.exceptions import InvalidCredentialsException 
+from fastapi.templating import Jinja2Templates
+from datetime import timedelta
+import psycopg2
 
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
+
+SECRET = "c67b468dd8b0055b207c639cc268ab63632427e47d3818eb"
+
+manager = LoginManager(SECRET,'/auth/login',use_cookie=True)
+manager.cookie_name = "some-name"
+
+
+@manager.user_loader()
+def load_user(username:str):
+    
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
+    
+    result = cursor.fetchone()
+
+    if result:
+        user_dict = {
+            "nombre": result[1],
+            "apellido": result[2],
+            "email": result[3],
+            "pw": result[4],
+            "id_sup": result[5],
+        }
+    
+        return user_dict
+    else:
+        return None
 
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
@@ -25,13 +59,13 @@ async def loginx(request: Request):
         "request": request
         })
 
-@app.get("/juegos", response_class=HTMLResponse)
+@app.get("/juegos", response_class=HTMLResponse, _=Depends(manager))
 async def juegos(request: Request):
     return templates.TemplateResponse("juegos.html",{
         "request": request
         })
 
-@app.get("/temas", response_class=HTMLResponse)
+@app.get("/temas", response_class=HTMLResponse, _=Depends(manager))
 async def temas(request: Request):
     return templates.TemplateResponse("temas.html",{
         "request": request
@@ -73,56 +107,24 @@ async def post_form (request: Request,
 
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
-
-class User(BaseModel):
-    username: str
-    nombre: str
-    apellido: str
 
 
-def fake_decode_token(token):
-
-    cursor = conn.cursor()
-    
-    cursor.execute("SELECT id_sup FROM ta_test_fede WHERE email =%s", (token,))
-    
-    result = cursor.fetchone()
-    
-    cursor.close()
-    
-    if result:
-        return result
-    else:
-        return None
-
-
-async def get_current_user(token: str = Depends(oauth2_scheme)):
-    user = fake_decode_token(token)
+@app.post("/auth/login")
+def login(data: OAuth2PasswordRequestForm = Depends()):
+    username = data.username
+    password = data.password
+    user = load_user(username)
     if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid authentication credentials",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-    return user
-
-
-@app.post("/ingreso_usuario")
-async def login(form_data: OAuth2PasswordRequestForm = Depends()):
-  
-    cursor = conn.cursor()
-    
-   
-    cursor.execute("SELECT * FROM ta_test_fede WHERE email=%s AND apellido=%s", (form_data.username, form_data.password))
-    
-    result = cursor.fetchone()
-    
-
-    if result:
-        return {"access_token": form_data.username, "token_type": "bearer"}
-    else:
-        raise HTTPException(status_code=400, detail="Incorrect username or password")
+        raise InvalidCredentialsException
+    elif password != user['pw']:
+        raise InvalidCredentialsException
+    access_token = manager.create_access_token(
+        data={"sub":username},
+        expires=timedelta(hours=1)
+    )
+    resp = RedirectResponse(url="/juegos",status_code=status.HTTP_302_FOUND)
+    manager.set_cookie(resp,access_token)
+    return resp
 
 
 if __name__ == '__main__':

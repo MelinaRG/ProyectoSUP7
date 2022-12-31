@@ -1,5 +1,4 @@
 from peewee import Model, CharField, IntegerField, IntegrityError
-from fastapi import FastAPI, Request, Form, Depends, HTTPException, status, Request
 import os
 import psycopg2
 
@@ -17,7 +16,7 @@ conn = psycopg2.connect(
     password=DBKEY,
     port= DBPORT
 )
-conn.close()
+
 
 #Formulario
 class sup_db(Model):
