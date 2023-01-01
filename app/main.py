@@ -121,6 +121,17 @@ async def post_form (request: Request):
 
     return 'Gracias por responder, sus datos fueron enviados con éxito!'
 
+@app.post("/registro_usuario")
+async def post_form (request: Request, user=Depends(manager)):
+    data = await request.form()
+    lista = []
+
+    for key in data.keys():
+        lista.append(data[key])
+
+    resp = RedirectResponse(url="/registro",status_code=status.HTTP_302_FOUND)
+    return lista
+
 
 
 
