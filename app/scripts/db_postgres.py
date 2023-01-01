@@ -1,7 +1,5 @@
-from peewee import Model, CharField, IntegerField, IntegrityError
-from fastapi import FastAPI, Request, Form, Depends, HTTPException, status, Request
 import os
-import psycopg2
+import psycopg2, psycopg2.extras
 
 
 DBNAME = os.environ["DBNAME"]
@@ -10,6 +8,7 @@ DBKEY = os.environ["DBKEY"]
 DBHOST = os.environ["DBHOST"]
 DBPORT = os.environ["DBPORT"]
 
+
 conn = psycopg2.connect(
     host=DBHOST,
     database=DBNAME,
@@ -17,47 +16,18 @@ conn = psycopg2.connect(
     password=DBKEY,
     port= DBPORT
 )
-conn.close()
+#NOTE COPIERINO
+def get_asistencia(id_sup = 0): #NOTE sacar hardcode
+    data = id_sup #NOTE sacar hardcode
+    engine = conn
+    cur = engine.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    cur.execute('SELECT * FROM ta')
+    data1 = cur.fetchall()
+    data = {}
+    for e,row in enumerate(data1):
+        data[e] = dict(row)
+    cur.close()
+    return data
 
-#Formulario
-class sup_db(Model):
-    class Meta:
-        database = conn
-
-class Usuario(sup_db):
-    grupo_sup = IntegerField()
-    nombre = CharField()
-    apellido = CharField()
-    edad = IntegerField()
-    email = CharField(primary_key = True)
-    nacionalidad = CharField()
-    pais_residencia = CharField()
-    ocupacion = CharField()
-    dispositivo = CharField()
-    mic_y_cam = CharField()
-    funcion_sup = CharField()
-    gustos_sup = CharField()
-
-def create_user(lista):
-    conn.connect()
-    try:
-        with conn.atomic():
-            Usuario.create(
-                grupo_sup = lista[0],
-                nombre = lista[1],
-                apellido = lista[2],
-                edad = lista[3],
-                email = lista[4],
-                nacionalidad = lista[5],
-                pais_residencia = lista[6],
-                ocupacion = lista[7],
-                dispositivo = lista[8],
-                mic_y_cam = lista[9],
-                funcion_sup = lista[10],
-                gustos_sup = lista[11]
-            )
-    except IntegrityError:
-        print(f'¡Ese correo ya se encuentra registrado! Por favor, intente nuevamente con un nuevo correo.')
-    conn.close()
-
+#NOTE END COPIERINO
 

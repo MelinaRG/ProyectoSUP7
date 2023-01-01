@@ -5,6 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from scripts.db_postgres import create_user
 from scripts.db_postgres import conn
+from scripts.db_postgres import get_asistencia
 from pydantic import BaseModel
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 
@@ -18,6 +19,15 @@ async def get_form(request: Request):
     return templates.TemplateResponse("index.html", {
         "request": request
     })
+
+#COPIERINO
+@app.get("/asistencia", response_class=HTMLResponse)
+async def asistenciax(request:Request):
+    return templates.TemplateResponse('asistencia.html',{
+        "request": request,
+        "alumnos": get_asistencia()
+    })
+#HASTA ACA
 
 @app.get("/login", response_class=HTMLResponse)
 async def loginx(request: Request):
