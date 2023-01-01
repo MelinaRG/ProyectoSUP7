@@ -43,9 +43,6 @@ def load_user(username:str):
         return user_dict
     cursor.close()
     
-   
-
-
     
 @app.get("/", response_class=HTMLResponse)
 async def get_form(request: Request):
@@ -107,39 +104,42 @@ async def temas(request: Request, user=Depends(manager)):
         "request": request
         })
 
-@app.post("/add_contact", response_class=HTMLResponse)
-async def post_form (request: Request, 
-            grupo_sup: int = Form(...),
-            nombre: str = Form(...),
-            apellido: str = Form(...),
-            edad: int = Form(...),
-            email: str = Form(...),
-            nacionalidad: str = Form(...),
-            pais_residencia: str = Form(...),
-            ocupacion: str = Form(...),
-            dispositivo: str = Form(...),
-            mic_y_cam: str = Form(...),
-            funcion_sup: str = Form(...),
-            gustos_sup: str = Form(...),):
+@app.post("/add_alumno")
+async def post_form (request: Request):
+    data = await request.form()
+    lista = []
 
-            lista = []
+    for key in data.keys():
+        lista.append(data[key])
 
-            lista.append(grupo_sup)
-            lista.append(nombre)
-            lista.append(apellido)
-            lista.append(edad)
-            lista.append(email)
-            lista.append(nacionalidad)
-            lista.append(pais_residencia)
-            lista.append(ocupacion)
-            lista.append(dispositivo)
-            lista.append(mic_y_cam)
-            lista.append(funcion_sup)
-            lista.append(gustos_sup)
+    return lista
 
-            create_user(lista)
 
-            return 'Gracias por responder'
+
+
+
+#FUNCION QUE ME RECONOCE EL ID_SUP DEL TA
+
+def id_user(username:str):
+    
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM ta WHERE email=%s", (username,))
+    
+    result = cursor.fetchone()
+    if result:
+        user_dict = {
+            "nombre": result[1],
+            "apellido": result[2],
+            "email": result[3],
+            "pw": result[4],
+            "id_sup": result[5],
+        }
+        
+        return result[5]
+    else:
+        return None
+
 
 
 

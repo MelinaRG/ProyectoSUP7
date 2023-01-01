@@ -37,39 +37,27 @@
 		</nav>
 		<div class="form__title__form"><h2 style="text-align: center;">Formulario</h2></div>
 		<div class="form">
-			<form action="/add_contact" method="POST">
-				<p class="pregunta-form">¿Cuál es tu grupo de SUP? <input class= "input_select" type="number" name="grupo_sup" placeholder="7" required=""></p>
+			<form action="/add_alumno" method="POST">
 				<p class="pregunta-form">Nombre <input class= "input_select" type="text" name="nombre" placeholder="Nombre" required=""></p>
 				<p class="pregunta-form">Apellido <input class= "input_select" type="text" name="apellido" placeholder="Apellido" required></p>
 				<p class="pregunta-form">Edad <input class= "input_select" type="number" name="edad" placeholder="Edad" required></p>
 				<p class="pregunta-form">Mail <input class= "input_select" type="email" name="email" placeholder="email@gmail.com" required></p>
-				<p class="pregunta-form">Nacionalidad <input class= "input_select" type="text" name="nacionalidad" placeholder="Argentina" required></p>
-				<p class="pregunta-form">País de residencia <input class= "input_select" type="text" name="pais_residencia" placeholder="Argentina" required></p>
-				<p class="pregunta-form">¿Trabaja y estudia?
-					   <select class= "input_select" name="ocupacion">
-					     <option>Trabajo y estudio</option>
-					     <option>Solo estudio</option>
-					   </select></p>
+				<p class="pregunta-form">¿Cuál es tu grupo de SUP? <input class= "input_select" type="number" name="id_sup" placeholder="7" required=""></p>
+				<p class="pregunta-form">¿Tiene micrófono? <select class= "input_select" name="mic">
+					<option>Si</option>
+					<option>No</option>
+				  </select></p>
+		        <p class="pregunta-form">¿Tiene Cámara? <select class= "input_select" name="cam">
+				   <option>Si</option>
+				   <option>No</option>
+				  </select></p>
 				<p class="pregunta-form">¿Desde qué dispositivo se conecta al SUP? 
 					<select class= "input_select" name="dispositivo">
 					     <option>PC o notebook</option>
 					     <option>Celular, tablet o similar</option>
 					   </select>
-				<p class="pregunta-form">¿Tiene micrófono y cámara? <select class= "input_select" name="mic_y_cam">
-					     <option>Si, tengo ambos</option>
-					     <option>Solo micrófono</option>
-					     <option>Solo cámara</option>
-					     <option>Ninguno</option>
-					   </select></p>
-				<p class="pregunta-form">¿Cuál cree que es la función del SUP? <select class= "input_select" name="funcion_sup">
-					     <option>Resolver dudas administrativas</option>
-					     <option>Revisar la homework</option>
-					     <option>Desarrollar las soft skills</option>
-					     <option>Conocer compañeros</option>
-					     <option>Jugar, charlar de la vida</option>
-					     <option>No lo tengo en claro</option>
-					   </select></p>
-				<p class="pregunta-form">¿Qué le gustaría hacer durante el SUP? <select class= "input_select" name="gustos_sup">
+				<p class="pregunta-form">Nacionalidad <input class= "input_select" type="text" name="pais" placeholder="Argentina" required></p>
+				<p class="pregunta-form">¿Qué le gustaría hacer durante el SUP? <select class= "input_select" name="interes">
 					     <option>Resolver dudas administrativas</option>
 					     <option>Revisar la homework</option>
 					     <option>Desarrollar las soft skills</option>
