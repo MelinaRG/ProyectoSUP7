@@ -87,7 +87,7 @@ async def temas(request: Request, user=Depends(manager)):
         })
 
 @app.get("/form", response_class=HTMLResponse)
-async def temas(request: Request, user=Depends(manager)):
+async def temas(request: Request):
     return templates.TemplateResponse("form.html",{
         "request": request
         })
@@ -112,7 +112,7 @@ async def post_form (request: Request):
     for key in data.keys():
         lista.append(data[key])
 
-    return lista
+    return 'Gracias por responder, sus datos fueron enviados con éxito!'
 
 
 
