@@ -3,6 +3,7 @@ import psycopg2
 import sqlite3 as sql
 import pandas as pd
 import altair as alt
+from ..db_postgres import conn
 
 st.set_page_config(page_title='TA Tools - Dipositivos', 
                    page_icon='📊', 
@@ -37,11 +38,11 @@ st.header('Indicadores de tu grupo')
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
-@st.experimental_singleton
-def init_connection():
-    return psycopg2.connect(**st.secrets["postgres"])
+#@st.experimental_singleton
+#def init_connection():
+#    return psycopg2.connect(**st.secrets["postgres"])
 
-conn = init_connection()
+#conn = init_connection()
 
 
 @st.experimental_memo(ttl=600)
