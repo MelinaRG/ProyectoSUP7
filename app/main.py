@@ -105,6 +105,12 @@ async def temas(request: Request, user=Depends(manager)):
         "request": request
         })
 
+@app.get("/registro", response_class=HTMLResponse)
+async def temas(request: Request, user=Depends(manager)):
+    return templates.TemplateResponse("registro_usuarios.html",{
+        "request": request
+        })
+
 @app.post("/add_alumno")
 async def post_form (request: Request):
     data = await request.form()
