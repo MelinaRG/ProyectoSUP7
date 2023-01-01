@@ -67,7 +67,10 @@ def login(data: OAuth2PasswordRequestForm = Depends()):
         data={"sub":username},
         expires=timedelta(hours=1)
     )
-    resp = RedirectResponse(url="/index",status_code=status.HTTP_302_FOUND)
+    if username == "sup@admin.com" and password == user['pw']:
+        resp = RedirectResponse(url="/registro",status_code=status.HTTP_302_FOUND)
+    else:
+        resp = RedirectResponse(url="/form",status_code=status.HTTP_302_FOUND)
     manager.set_cookie(resp,access_token)
     return resp
 
