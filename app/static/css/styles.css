@@ -363,8 +363,14 @@ body{
 }
 
 
-
-
+.gracias_cont{
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 2em;
+}
 
 
 
