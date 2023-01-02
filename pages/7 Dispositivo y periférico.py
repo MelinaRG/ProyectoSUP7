@@ -54,7 +54,7 @@ sql8.columns = ['Microfono','Cantidad']
 st.table(sql8)
 
 base = alt.Chart(sql8).encode(
-        theta=alt.Theta("Microfono:Q", stack=True), color=alt.Color("Microfono:N", legend=None)
+        theta=alt.Theta("Microfono:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
     )
 
 pie = base.mark_arc(outerRadius=150)
