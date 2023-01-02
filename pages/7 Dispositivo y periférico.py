@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 import sqlite3 as sql
 import pandas as pd
+import altair as alt
 from scripts.db_postgres import conn
 
 st.set_page_config(page_title='TA Tools - Dispositivos c/ periféricos', 
@@ -47,3 +48,18 @@ st.subheader('Dispositivos y conexión')
 sql7 = pd.DataFrame(run_query("SELECT nombre,apellido,dispositivo,mic,cam FROM alumno"))
 sql7.columns = ['Nombre','Apellido','Micrófono','Cámara','Periférico']
 st.table(sql7)
+
+sql8 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(mic),COUNT(cam) FROM alumno GROUP BY DISPOSITIVO"))
+sql8.columns = ['Dispositivo','Cantidad']
+st.table(sql8)
+
+base = alt.Chart(sql8).encode(
+        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Dispositivo:N", legend=None)
+    )
+
+pie = base.mark_arc(outerRadius=150)
+text = base.mark_text(radius=180, size=12).encode(text="Dispositivo:N")
+
+charte = pie + text
+
+st.altair_chart(charte, use_container_width=True)
