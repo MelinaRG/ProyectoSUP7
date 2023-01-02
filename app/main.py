@@ -116,9 +116,13 @@ async def post_form (request: Request):
     lista = []
 
     for key in data.keys():
+        if data == 'Si':
+            data == True
+        if data == 'No':
+            data == False
         lista.append(data[key])
 
-    return 'Gracias por responder, sus datos fueron enviados con éxito!'
+    return lista
 
 @app.post("/registro_usuario")
 async def post_form (request: Request, user=Depends(manager)):
@@ -129,7 +133,7 @@ async def post_form (request: Request, user=Depends(manager)):
         lista.append(data[key])
 
     resp = RedirectResponse(url="/registro",status_code=status.HTTP_302_FOUND)
-    return lista
+    return resp
 
 
 
