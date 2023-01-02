@@ -45,8 +45,8 @@ def run_query(query):
 
 #- relacionar la edad c que prefieren hacer en el sup
 st.subheader('Edad y preferencias')
-sql6 = pd.DataFrame(run_query("SELECT nombre,apellido,edad,interes FROM alumno ORDER BY edad"))
-sql6.columns = ['Nombre','Apellido','Edad','Interés']
+sql6 = pd.DataFrame(run_query("SELECT edad,interes, COUNT(interes) FROM alumno GROUP BY edad, interes;"))
+sql6.columns = ['Edad','Interes', 'Cantidad']
 st.table(sql6)
 
 chart2 = alt.Chart(sql6).mark_bar(
@@ -54,7 +54,7 @@ chart2 = alt.Chart(sql6).mark_bar(
         cornerRadiusTopRight=3
     ).encode(
         x='Edad:O',
-        y='Interés:Q',
+        y='Cantidad:Q',
         color='Interés:N'
     )
 
