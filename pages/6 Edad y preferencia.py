@@ -47,7 +47,7 @@ def run_query(query):
 st.subheader('Edad y preferencias')
 sql6 = pd.DataFrame(run_query("SELECT edad,interes, COUNT(interes) FROM alumno GROUP BY edad, interes ORDER BY edad, interes;"))
 sql6.columns = ['Edad','Interes', 'Cantidad']
-st.table(sql6)
+
 
 chart2 = alt.Chart(sql6).mark_bar(
         cornerRadiusTopLeft=3,
@@ -59,3 +59,5 @@ chart2 = alt.Chart(sql6).mark_bar(
     )
 
 st.altair_chart(chart2, use_container_width=True)
+
+st.table(sql6)
