@@ -49,7 +49,7 @@ sql7 = pd.DataFrame(run_query("SELECT nombre,apellido,dispositivo,mic,cam FROM a
 sql7.columns = ['Nombre','Apellido','Micrófono','Cámara','Periférico']
 st.table(sql7)
 
-sql8 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(mic),COUNT(cam) FROM alumno GROUP BY DISPOSITIVO"))
+sql8 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(mic),COUNT(cam) FROM alumno GROUP BY dispositivo"))
 sql8.columns = ['Dispositivo','Cantidad']
 st.table(sql8)
 
