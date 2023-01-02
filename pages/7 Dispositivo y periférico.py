@@ -54,11 +54,11 @@ sql8.columns = ['Dispositivo','Cantidad']
 st.table(sql8)
 
 base = alt.Chart(sql8).encode(
-        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Dispositivo:N", legend=None)
+        theta=alt.Theta("Dispositivo:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
     )
 
 pie = base.mark_arc(outerRadius=150)
-text = base.mark_text(radius=180, size=12).encode(text="Dispositivo:N")
+text = base.mark_text(radius=180, size=12).encode(text="Cantidad:N")
 
 charte = pie + text
 
