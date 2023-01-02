@@ -79,40 +79,23 @@
    }
  }
 
-/*
-var diccAlumnoAux = {
-    "0": {
-        "id_alumno": 0,
-        "nombre": "bruce",
-        "apellido": "wayne",
-        "id_sup": "DTS-03_02",
-        "lunes": false,
-        "martes": false,
-        "miercoles": false,
-        "jueves": false,
-        "semana": 1,
-        "modulo": 2,
-    },
-}
-*/
-
 var diccAlumno = {
     "0": {
         "id_alumno": 0,
-        "nombre": "bruce",
-        "apellido": "wayne",
+        "nombre": "Bruce",
+        "apellido": "Wayne",
         "id_sup": "DTS-03_02",
         "1-1" : {
-            "lunes":true,
-            "martes":true,
+            "lunes":false,
+            "martes":false,
             "miercoles":false,
             "jueves":false
         },
         "1-2" : {
             "lunes":false,
             "martes":false,
-            "miercoles":true,
-            "jueves":true
+            "miercoles":false,
+            "jueves":false
         },
         "2-1" : {
             "lunes":false,
@@ -177,20 +160,644 @@ var diccAlumno = {
     },
     "1": {
         "id_alumno": 1,
-        "nombre": "lord",
-        "apellido": "valdomero",
+        "nombre": "Lord",
+        "apellido": "Valdomero",
         "id_sup": "DTS-03_02",
         "1-1" : {
-            "lunes":true,
-            "martes":true,
-            "miercoles":true,
-            "jueves":true
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
         },
         "1-2" : {
             "lunes":false,
             "martes":false,
             "miercoles":false,
-            "jueves":true
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "2": {
+        "id_alumno": 2,
+        "nombre": "Susana",
+        "apellido": "Horia",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "3": {
+        "id_alumno": 3,
+        "nombre": "Carlitos",
+        "apellido": "Balá",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "4": {
+        "id_alumno": 4,
+        "nombre": "Godofredo",
+        "apellido": "Gomez",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "5": {
+        "id_alumno": 5,
+        "nombre": "Lionel",
+        "apellido": "Messi",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "6": {
+        "id_alumno": 6,
+        "nombre": "Susi",
+        "apellido": "Garrillo",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "7": {
+        "id_alumno": 7,
+        "nombre": "Elvis",
+        "apellido": "Crespo",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "8": {
+        "id_alumno": 8,
+        "nombre": "Henry",
+        "apellido": "Cavill",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "9": {
+        "id_alumno": 9,
+        "nombre": "Ataúlfo",
+        "apellido": "Qué",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
         },
         "2-1" : {
             "lunes":false,
@@ -253,7 +860,6 @@ var diccAlumno = {
             "jueves":false
         },
     }
-    
 }
 var encarga
 
