@@ -45,8 +45,8 @@ def run_query(query):
 
 #- dispositivo q ussn para conectarse al sup (ver porcentaje de cada c resp al total)
 st.subheader('Dispositivos utilizados')
-sql3 = pd.DataFrame(run_query("SELECT nombre, apellido, dispositivo FROM alumno"))
-sql3.columns = ['Nombre','Apellido','Dispositivo']
+sql3 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(dispositivo) FROM alumno GROUP BY dispositivo"))
+sql3.columns = ['Dispositivo', 'Cantidad']
 st.table(sql3)
 
 
