@@ -68,13 +68,13 @@ sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"
 sql9.columns = ['Camara','Cantidad']
 st.table(sql9)
 
-base = alt.Chart(sql9).encode(
+base2 = alt.Chart(sql9).encode(
         theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
     )
 
-pie = base.mark_arc(outerRadius=150)
-text = base.mark_text(radius=180, size=12).encode(text="Camara:N")
+pie2 = base2.mark_arc(outerRadius=150)
+text2 = base2.mark_text(radius=180, size=12).encode(text="Camara:N")
 
-charte = pie + text
+chart2 = pie2 + text2
 
-st.altair_chart(charte, use_container_width=True)
+st.altair_chart(chart2, use_container_width=True)
