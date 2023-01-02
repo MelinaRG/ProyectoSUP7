@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asistencia</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+	<link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="hero1">
+		<nav class="nav container">
+			<div class="nav__logo">
+				<h2 class="nav__title">TA TOOLS</h2>
+			</div>
+			<ul class="nav__link nav__link--menu">
+				<li class="nav__items">
+					<a href="/" class="nav__links" id="boton__inicio">Inicio</a>
+				</li>
+				<li class="nav__items">
+					<a href="/juegos" class="nav__links">Juegos</a>
+				</li>
+				<li class="nav__items">
+					<a href="/temas" class="nav__links">Temas</a>
+				</li>
+				<li class="nav__items">
+					<a href="/form" class="nav__links" id="boton__form">Form</a>
+				</li>
+				<li class="nav__items">
+					<a href="/datos" class="nav__links">Datos</a>
+				</li>
+				<li class="nav__items">
+					<a href="/asistencia" class="nav__links">Asistencia</a>
+				</li>
+			</ul>
+		</nav> 
+    </header>
+    <main class= "container main-container">
+<!-- Select para el módulo -->
+<div class="abuelo-container">
+  <div class="button-container">
+    <button>Cargar Asistencia</button>
+  </div>
+  <div class="select-container">
+  <label for="modulo"></label>
+    <select id="modulo" name="modulo">
+      <option value="1"><a>Modulo 1</a></option>
+      <option value="2"><a>Modulo 2</a></option>
+      <option value="3"><a>Modulo 3</a></option>
+      <option value="4"><a>Modulo 4</a></option>
+      <option value="5"><a>Modulo 5</a></option>
+      <option value="6"><a>Modulo 6</a></option>
+    </select>
+  <!-- Select para la semana -->
+  <label for="semana"></label>
+    <select id="semana" name="semana">
+      <option value="1">Semana 1</option>
+      <option value="2">Semana 2</option>
+    </select>
+  </div>
+  <div class="table-container">
+  <table id="tablaAsistencia">
+    <tr>
+      <th style="text-align: left;">Alumno</th>
+      <th>Lunes<input type="checkbox" onclick="selectAll(this, 'lunes')"></th>
+      <th>Martes<input type="checkbox" onclick="selectAll(this, 'martes')"></th>
+      <th>Miércoles<input type="checkbox" onclick="selectAll(this, 'miercoles')"></th>
+      <th>Jueves<input type="checkbox" onclick="selectAll(this, 'jueves')"></th>
+    </tr>
+  </table>
+</div>
+</div>
+    <script>
+ function selectAll(checkbox, className) {
+   var checkboxes = document.getElementsByClassName(className);
+   for (var i = 0; i < checkboxes.length; i++) {
+     checkboxes[i].checked = checkbox.checked;
+   }
+ }
+
+/*
+var diccAlumnoAux = {
+    "0": {
+        "id_alumno": 0,
+        "nombre": "bruce",
+        "apellido": "wayne",
+        "id_sup": "DTS-03_02",
+        "lunes": false,
+        "martes": false,
+        "miercoles": false,
+        "jueves": false,
+        "semana": 1,
+        "modulo": 2,
+    },
+}
+*/
+
+var diccAlumno = {
+    "0": {
+        "id_alumno": 0,
+        "nombre": "bruce",
+        "apellido": "wayne",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":true,
+            "martes":true,
+            "miercoles":false,
+            "jueves":false
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":true,
+            "jueves":true
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    },
+    "1": {
+        "id_alumno": 1,
+        "nombre": "lord",
+        "apellido": "valdomero",
+        "id_sup": "DTS-03_02",
+        "1-1" : {
+            "lunes":true,
+            "martes":true,
+            "miercoles":true,
+            "jueves":true
+        },
+        "1-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":true
+        },
+        "2-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "2-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "3-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "4-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "5-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-1" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+        "6-2" : {
+            "lunes":false,
+            "martes":false,
+            "miercoles":false,
+            "jueves":false
+        },
+    }
+    
+}
+var encarga
+
+const datosTabla = () =>{
+  
+  
+  console.log(encarga)
+  if (encarga == 1){
+ // Obtiene el elemento de la tabla
+var tabla = document.getElementById("tablaAsistencia");
+
+// Mientras la tabla tenga más de un hijo
+while (tabla.children.length > 1) {
+  // Elimina el segundo hijo de la tabla
+  tabla.removeChild(tabla.children[1]);
+}
+
+}
+  encarga = 1
+ 
+  // Obtén el elemento del select tag para el módulo
+  var selectModulo = document.getElementById("modulo");
+  // Obtén el valor seleccionado en el select tag para el módulo
+  var modulo = selectModulo.value;
+
+  // Obtén el elemento del select tag para la semana
+  var selectSemana = document.getElementById("semana");
+  // Obtén el valor seleccionado en el select tag para la semana
+  var semana = selectSemana.value;
+
+  // Construye la cadena de texto con la combinación de módulo y semana seleccionados
+  var moduloSemana = modulo + "-" + semana;
+
+  // Obtiene el elemento de la tabla
+  var tabla = document.getElementById("tablaAsistencia");
+
+  // Mientras la tabla tenga más de un hijo
+  while (tabla.children.length > 1) {
+    // Elimina el segundo hijo de la tabla
+    tabla.removeChild(tabla.children[1]);
+  }
+
+// Recorre todos los alumnos del diccionario
+  for (var clave in diccAlumno) {
+    // Obtén el objeto del alumno
+    var alumno = diccAlumno[clave];
+
+    // Obtén el objeto con la información de asistencia para el módulo y semana seleccionados
+    var asistencia = alumno[moduloSemana];
+
+    // Crea una fila para el alumno
+    var tr = document.createElement("tr");
+
+    // Crea una celda para el nombre del alumno
+    var tdNombre = document.createElement("td");
+    tdNombre.textContent = alumno.nombre + " " + alumno.apellido;
+
+    // Crea una celda para el estado de asistencia del lunes
+    var tdLunes = document.createElement("td");
+    var inputLunes = document.createElement("input");
+    inputLunes.type = "checkbox";
+    inputLunes.checked = asistencia.lunes;
+    inputLunes.className = "lunes";
+    tdLunes.appendChild(inputLunes);
+
+    // Crea una celda para el estado de asistencia del martes
+    var tdMartes = document.createElement("td");
+    var inputMartes = document.createElement("input");
+    inputMartes.type = "checkbox";
+    inputMartes.checked = asistencia.martes;
+    inputMartes.className = "martes";
+    tdMartes.appendChild(inputMartes);
+
+    // Crea una celda para el estado de asistencia del miércoles
+    var tdMiercoles = document.createElement("td");
+    var inputMiercoles = document.createElement("input");
+    inputMiercoles.type = "checkbox";
+    inputMiercoles.checked = asistencia.miercoles;
+    inputMiercoles.className = "miercoles";
+    tdMiercoles.appendChild(inputMiercoles);
+
+    // Crea una celda para el estado de asistencia del jueves
+    var tdJueves = document.createElement("td");
+    var inputJueves = document.createElement("input");
+    inputJueves.type = "checkbox";
+    inputJueves.checked = asistencia.jueves;
+    inputJueves.className = "jueves";
+    tdJueves.appendChild(inputJueves);
+
+    // Agrega las celdas a la fila
+    tr.appendChild(tdNombre);
+    tr.appendChild(tdLunes);
+    tr.appendChild(tdMartes);
+    tr.appendChild(tdMiercoles);
+    tr.appendChild(tdJueves);
+
+    // Agrega las filas a la tabla
+    tabla.appendChild(tr);
+  }
+}
+
+
+encarga = 0
+
+datosTabla()
+
+const modulo = document.getElementById ("modulo")
+modulo.addEventListener("change",datosTabla)
+
+
+const semana = document.getElementById ("semana")
+semana.addEventListener("change",datosTabla)
+    </script>
+    </main>
+</body>
+</html>
