@@ -138,11 +138,12 @@ async def post_form (request: Request, user=Depends(manager)):
     cursor = conn.cursor()
 
     cursor.execute('CALL batman (%s,%s,%s,%s,%s,%s,%s)',(lista[0],lista[1],lista[2],lista[3],lista[4],lista[5],lista[6]))
-    
+    conn.commit()
+
     resp = RedirectResponse(url="/registro",status_code=status.HTTP_302_FOUND)
 
     cursor.close()
-    
+
     return resp
 
 
