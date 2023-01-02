@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 import sqlite3 as sql
 import pandas as pd
+import altair as alt
 from scripts.db_postgres import conn
 
 st.set_page_config(page_title='TA Tools - Edad c/ Preferencia', 
@@ -47,3 +48,14 @@ st.subheader('Edad y preferencias')
 sql6 = pd.DataFrame(run_query("SELECT nombre,apellido,edad,interes FROM alumno ORDER BY edad"))
 sql6.columns = ['Nombre','Apellido','Edad','Interés']
 st.table(sql6)
+
+chart2 = alt.Chart(sql6).mark_bar(
+        cornerRadiusTopLeft=3,
+        cornerRadiusTopRight=3
+    ).encode(
+        x='Edad:O',
+        y='Interes:Q',
+        color='Interes:N'
+    )
+
+st.altair_chart(chart2, use_container_width=True)
