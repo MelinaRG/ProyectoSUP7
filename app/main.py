@@ -100,7 +100,7 @@ async def temas(request: Request, user=Depends(manager)):
 
 @app.get("/asistencia", response_class=HTMLResponse)
 async def temas(request: Request, user=Depends(manager)):
-    return templates.TemplateResponse("temas.html",{
+    return templates.TemplateResponse("asistencia.html",{
         "request": request
         })
 
@@ -125,7 +125,9 @@ async def post_form (request: Request):
          else:
             lista.append(data[key])
     
-    return 'Gracias por responder, sus datos fueron enviados con éxito!'
+    return templates.TemplateResponse("gracias.html",{
+        "request": request
+        })
 
 @app.post("/registro_usuario")
 async def post_form (request: Request, user=Depends(manager)):
