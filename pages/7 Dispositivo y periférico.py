@@ -49,12 +49,12 @@ sql7 = pd.DataFrame(run_query("SELECT nombre,apellido,dispositivo,mic,cam FROM a
 sql7.columns = ['Nombre','Apellido','Micrófono','Cámara','Periférico']
 st.table(sql7)
 
-sql8 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(mic) FROM alumno GROUP BY dispositivo"))
-sql8.columns = ['Dispositivo','Cantidad']
+sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
+sql8.columns = ['Microfono','Cantidad']
 st.table(sql8)
 
 base = alt.Chart(sql8).encode(
-        theta=alt.Theta("Dispositivo:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
+        theta=alt.Theta("Microfono:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
     )
 
 pie = base.mark_arc(outerRadius=150)
