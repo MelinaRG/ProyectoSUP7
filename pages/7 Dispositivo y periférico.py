@@ -44,10 +44,10 @@ def run_query(query):
 
 
 #- relacionar disp q usan con si tienen mic y cam o solo alguna de las dos
-st.subheader('Dispositivos y conexión')
-sql7 = pd.DataFrame(run_query("SELECT nombre,apellido,dispositivo,mic,cam FROM alumno"))
-sql7.columns = ['Nombre','Apellido','Micrófono','Cámara','Periférico']
-st.table(sql7)
+st.subheader('Microfono / Camara')
+#sql7 = pd.DataFrame(run_query("SELECT nombre,apellido,dispositivo,mic,cam FROM alumno"))
+#sql7.columns = ['Nombre','Apellido','Micrófono','Cámara','Periférico']
+#st.table(sql7)
 
 sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
 sql8.columns = ['Microfono','Cantidad']
@@ -59,6 +59,21 @@ base = alt.Chart(sql8).encode(
 
 pie = base.mark_arc(outerRadius=150)
 text = base.mark_text(radius=180, size=12).encode(text="Microfono:N")
+
+charte = pie + text
+
+st.altair_chart(charte, use_container_width=True)
+
+sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"))
+sql9.columns = ['Camara','Cantidad']
+st.table(sql9)
+
+base = alt.Chart(sql9).encode(
+        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
+    )
+
+pie = base.mark_arc(outerRadius=150)
+text = base.mark_text(radius=180, size=12).encode(text="Camara:N")
 
 charte = pie + text
 
