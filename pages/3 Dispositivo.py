@@ -36,15 +36,6 @@ st.markdown(header_style, unsafe_allow_html=True)
 st.header('Indicadores de tu grupo')
     
 
-# Initialize connection.
-# Uses st.experimental_singleton to only run once.
-#@st.experimental_singleton
-#def init_connection():
-#    return psycopg2.connect(**st.secrets["postgres"])
-
-#conn = init_connection()
-
-
 @st.experimental_memo(ttl=600)
 def run_query(query):
     cursor = conn.cursor()
