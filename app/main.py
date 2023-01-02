@@ -116,13 +116,16 @@ async def post_form (request: Request):
     lista = []
 
     for key in data.keys():
-        if data == 'Si':
-            data == True
-        if data == 'No':
-            data == False
-        lista.append(data[key])
-
-    return lista
+         if data[key] == "Si":
+            lista.append(True)
+         elif data[key] == "No":
+            lista.append(False)
+         elif data[key] == 'Enviar el formulario':
+            continue
+         else:
+            lista.append(data[key])
+    
+    return 'Gracias por responder, sus datos fueron enviados con éxito!'
 
 @app.post("/registro_usuario")
 async def post_form (request: Request, user=Depends(manager)):
