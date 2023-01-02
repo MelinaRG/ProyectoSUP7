@@ -2,7 +2,7 @@ import streamlit as st
 import psycopg2
 import sqlite3 as sql
 import pandas as pd
-from ..db_postgres import conn
+from ..scripts.db_postgres import conn
 
 st.set_page_config(page_title='TA Tools - Edades', 
                    page_icon='📊', 

@@ -3,7 +3,7 @@ import psycopg2
 import sqlite3 as sql
 import pandas as pd
 import altair as alt
-from ..db_postgres import conn
+from ..scripts.db_postgres import conn
 
 st.set_page_config(page_title='TA Tools - Preferencias', 
                    page_icon='📊', 
