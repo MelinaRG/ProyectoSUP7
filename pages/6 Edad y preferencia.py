@@ -45,7 +45,7 @@ def run_query(query):
 
 #- relacionar la edad c que prefieren hacer en el sup
 st.subheader('Edad y preferencias')
-sql6 = pd.DataFrame(run_query("SELECT edad,interes, COUNT(interes) FROM alumno GROUP BY edad, interes;"))
+sql6 = pd.DataFrame(run_query("SELECT edad,interes, COUNT(interes) FROM alumno GROUP BY edad, interes ORDER BY edad, interes;"))
 sql6.columns = ['Edad','Interes', 'Cantidad']
 st.table(sql6)
 
