@@ -55,7 +55,7 @@ chart2 = alt.Chart(sql6).mark_bar(
     ).encode(
         x='Edad:O',
         y='Cantidad:Q',
-        color='Interés:N'
+        color='Interes:N'
     )
 
 st.altair_chart(chart2, use_container_width=True)
