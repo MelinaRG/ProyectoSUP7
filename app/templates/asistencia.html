@@ -10,6 +10,31 @@
 </head>
 <body>
 	<header class="hero1">
+    <nav class="nav container">
+			<div class="nav__logo">
+				<h2 class="nav__title">TA TOOLS</h2>
+			</div>
+			<ul class="nav__link nav__link--menu">
+				<li class="nav__items">
+					<a href="/" class="nav__links" id="boton__inicio">Inicio</a>
+				</li>
+				<li class="nav__items">
+					<a href="/juegos" class="nav__links">Juegos</a>
+				</li>
+				<li class="nav__items">
+					<a href="/temas" class="nav__links">Temas</a>
+				</li>
+				<li class="nav__items">
+					<a href="/form" class="nav__links" id="boton__form">Form</a>
+				</li>
+				<li class="nav__items">
+					<a href="/datos" class="nav__links">Datos</a>
+				</li>
+				<li class="nav__items">
+					<a href="/asistencia" class="nav__links">Asistencia</a>
+				</li>
+			</ul>
+		</nav>
     </header>
     <main class= "container main-container">
 <!-- Select para el módulo -->
@@ -19,7 +44,7 @@
   </div>
   <div class="select-container">
   <label for="modulo"></label>
-    <select id="modulo" name="modulo">
+    <select class="selectAsistencia" id="modulo" name="modulo">
       <option value="1"><a>Modulo 1</a></option>
       <option value="2"><a>Modulo 2</a></option>
       <option value="3"><a>Modulo 3</a></option>
@@ -29,7 +54,7 @@
     </select>
   <!-- Select para la semana -->
   <label for="semana"></label>
-    <select id="semana" name="semana">
+    <select class="selectAsistencia" id="semana" name="semana">
       <option value="1">Semana 1</option>
       <option value="2">Semana 2</option>
     </select>
