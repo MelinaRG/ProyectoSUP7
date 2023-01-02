@@ -69,7 +69,7 @@ sql9.columns = ['Camara','Cantidad']
 st.table(sql9)
 
 base2 = alt.Chart(sql9).encode(
-        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Cantidad:N", legend=None)
+        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Camara:N", legend=None)
     )
 
 pie2 = base2.mark_arc(outerRadius=150)
