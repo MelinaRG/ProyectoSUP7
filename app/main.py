@@ -67,7 +67,7 @@ def login(data: OAuth2PasswordRequestForm = Depends()):
         expires=timedelta(hours=1)
     )
     if username == "sup@admin.com" and password == user['pw']:
-        resp = RedirectResponse(url="/registro",status_code=status.HTTP_302_FOUND)
+        resp = RedirectResponse(url="/c639cc268ab63632427e47d3818e",status_code=status.HTTP_302_FOUND)
     else:
         resp = RedirectResponse(url="/index",status_code=status.HTTP_302_FOUND)
     manager.set_cookie(resp,access_token)
@@ -103,7 +103,7 @@ async def temas(request: Request, user=Depends(manager)):
         "request": request
         })
 
-@app.get("/registro", response_class=HTMLResponse)
+@app.get("/c639cc268ab63632427e47d3818e", response_class=HTMLResponse)
 async def temas(request: Request, user=Depends(manager)):
     return templates.TemplateResponse("registro_usuarios.html",{
         "request": request
@@ -141,7 +141,7 @@ async def post_form (request: Request, user=Depends(manager)):
     cursor.execute('CALL batman (%s,%s,%s,%s,%s,%s,%s)',(lista[0],lista[1],lista[2],lista[3],lista[4],lista[5],lista[6]))
     conn.commit()
 
-    resp = RedirectResponse(url="/registro",status_code=status.HTTP_302_FOUND)
+    resp = RedirectResponse(url="/c639cc268ab63632427e47d3818e",status_code=status.HTTP_302_FOUND)
 
     cursor.close()
 
