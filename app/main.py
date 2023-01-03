@@ -81,7 +81,7 @@ async def juegos(request: Request, user=Depends(manager)):
         })
 
 @app.get("/temas", response_class=HTMLResponse)
-async def temas(request: Request, user=Depends(manager)):
+async def temas(request: Request):
     return templates.TemplateResponse("temas.html",{
         "request": request
         })
@@ -93,12 +93,12 @@ async def temas(request: Request):
         })
 
 @app.get("/datos", response_class=HTMLResponse)
-async def temas(request: Request, user=Depends(manager)):
+async def temas(request: Request):
      resp = RedirectResponse(url="https://streamlit-9nb6.onrender.com/",status_code=status.HTTP_302_FOUND)
      return resp
 
 @app.get("/asistencia", response_class=HTMLResponse)
-async def temas(request: Request, user=Depends(manager)):
+async def temas(request: Request):
     return templates.TemplateResponse("asistencia.html",{
         "request": request
         })
