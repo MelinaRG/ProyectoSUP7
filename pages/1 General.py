@@ -2,6 +2,7 @@ import streamlit as st
 import psycopg2
 import sqlite3 as sql
 import pandas as pd
+import altair as alt
 from scripts.db_postgres import conn
 
 st.set_page_config(page_title='TA Tools - General', 

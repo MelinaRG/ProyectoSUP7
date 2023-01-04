@@ -23,14 +23,14 @@ hide_table_row_index = """
 st.markdown(hide_table_row_index, unsafe_allow_html=True)
 
 
-header_style = '''
-    <style>
-        th{
-            background-color: #e7dc3f;
-        }
-    </style>
-'''
-st.markdown(header_style, unsafe_allow_html=True)
+#header_style = '''
+#    <style>
+#        th{
+#            background-color: #e7dc3f;
+#        }
+#    </style>
+#'''
+#st.markdown(header_style, unsafe_allow_html=True)
 
 
 #st.header('Indicadores de tu grupo')
