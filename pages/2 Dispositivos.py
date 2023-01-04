@@ -62,6 +62,7 @@ st.subheader('Microfono')
 sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
 sql8.columns = ['Microfono','Cantidad']
 sql8['Microfono'][sql8['Microfono'] == True] = 'Si'
+sql8['Microfono'][sql8['Microfono'] == False] = 'No'
 
 st.table(sql8)
 
@@ -80,6 +81,9 @@ st.subheader('Camara')
 
 sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"))
 sql9.columns = ['Camara','Cantidad']
+sql9['Camara'][sql9['Camara'] == True] = 'Si'
+sql9['Camara'][sql9['Camara'] == False] = 'No'
+
 st.table(sql9)
 
 base2 = alt.Chart(sql9).encode(
