@@ -47,7 +47,7 @@ def run_query(query):
 st.subheader('Dispositivos utilizados')
 sql3 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(dispositivo) FROM alumno GROUP BY dispositivo"))
 sql3.columns = ['Dispositivo', 'Cantidad']
-st.table(sql3)
+#st.table(sql3)
 
 
 st.subheader(f'La distribución de dispositivos es la siguiente:')

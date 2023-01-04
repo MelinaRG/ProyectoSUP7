@@ -51,7 +51,7 @@ st.subheader('Microfono / Camara')
 
 sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
 sql8.columns = ['Microfono','Cantidad']
-st.table(sql8)
+#st.table(sql8)
 
 base = alt.Chart(sql8).encode(
         theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Microfono:N", legend=None)
@@ -66,7 +66,7 @@ st.altair_chart(charte, theme=None, use_container_width=True)
 
 sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"))
 sql9.columns = ['Camara','Cantidad']
-st.table(sql9)
+#st.table(sql9)
 
 base2 = alt.Chart(sql9).encode(
         theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Camara:N", legend=None)

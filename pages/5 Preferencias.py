@@ -47,7 +47,7 @@ def run_query(query):
 st.subheader('Temas más elegidos para el SUP')
 sql5 = pd.DataFrame(run_query("SELECT interes, COUNT(interes) as tot FROM alumno GROUP BY interes ORDER BY tot DESC"))
 sql5.columns = ['Interés','Cantidad']
-st.table(sql5)
+#st.table(sql5)
 
 
 st.subheader(f'La distribución de preferencias es la siguiente:')

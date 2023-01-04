@@ -60,4 +60,4 @@ chart2 = alt.Chart(sql6).mark_bar(
 
 st.altair_chart(chart2, theme=None, use_container_width=True)
 
-st.table(sql6)
+#st.table(sql6)

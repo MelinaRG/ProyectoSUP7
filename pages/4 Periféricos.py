@@ -47,7 +47,7 @@ def run_query(query):
 st.subheader('Uso de cámara y/o micrófono')
 sql4 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) as Tot FROM alumno GROUP BY mic ORDER BY Tot DESC"))
 sql4.columns = ['Micrófono','Cantidad']
-st.table(sql4)
+#st.table(sql4)
 
 
 st.subheader(f'La distribución de periféricos es la siguiente:')
