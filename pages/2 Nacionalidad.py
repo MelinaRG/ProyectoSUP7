@@ -48,7 +48,7 @@ def run_query(query):
 st.subheader('Nacionalidades')
 sql2 = pd.DataFrame(run_query("SELECT pais, COUNT(id_alumno) as Tot FROM alumno GROUP BY pais ORDER BY Tot DESC"))
 sql2.columns = ['País','Cantidad']
-st.table(sql2)
+#st.table(sql2)
 
 
 st.subheader(f'La distribución de nacionalidades es la siguiente:')
