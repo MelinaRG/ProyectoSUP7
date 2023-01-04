@@ -26,7 +26,7 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 header_style = '''
     <style>
         th{
-            background-color: yellow;
+            background-color: #e7dc3f;
         }
     </style>
 '''
@@ -55,4 +55,4 @@ sql33 = pd.DataFrame(run_query("SELECT dispositivo, COUNT(dispositivo) FROM alum
 sql33.columns = ['Dispositivo','Cantidad']
 graf = alt.Chart(sql33).mark_bar().encode(
     x='Dispositivo', y='Cantidad', color= 'Dispositivo', tooltip=['Dispositivo', 'Cantidad']).properties(width=450).interactive()
-st.altair_chart(graf, use_container_width=True)
+st.altair_chart(graf, theme=None, use_container_width=True)

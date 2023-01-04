@@ -26,7 +26,7 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 header_style = '''
     <style>
         th{
-            background-color: yellow;
+            background-color: #e7dc3f;
         }
     </style>
 '''
@@ -53,4 +53,4 @@ st.table(sql2)
 st.subheader(f'La distribución de nacionalidades es la siguiente:')
 graf = alt.Chart(sql2).mark_bar().encode(
     x='País', y='Cantidad', color= 'País', tooltip=['País', 'Cantidad']).properties(width=450).interactive()
-st.altair_chart(graf, use_container_width=True)
+st.altair_chart(graf, theme=None, use_container_width=True)

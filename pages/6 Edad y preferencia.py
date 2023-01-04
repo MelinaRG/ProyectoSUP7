@@ -26,7 +26,7 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 header_style = '''
     <style>
         th{
-            background-color: yellow;
+            background-color: #e7dc3f;
         }
     </style>
 '''
@@ -58,6 +58,6 @@ chart2 = alt.Chart(sql6).mark_bar(
         color='Interes:N'
     )
 
-st.altair_chart(chart2, use_container_width=True)
+st.altair_chart(chart2, theme=None, use_container_width=True)
 
 st.table(sql6)
