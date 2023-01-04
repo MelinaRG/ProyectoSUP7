@@ -26,7 +26,8 @@ st.markdown(hide_table_row_index, unsafe_allow_html=True)
 header_style = '''
     <style>
         th{
-            background-color: #FFF;
+            color: #FFF
+            background-color: #2B2B2B;
         }
     </style>
 '''
