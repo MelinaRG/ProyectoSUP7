@@ -55,4 +55,4 @@ col3.metric(label="Mayor", value=int(sql11[0][1]), delta=None)
 st.subheader('Edades de los alumnos')
 sql111 = pd.DataFrame(run_query("SELECT nombre,apellido,edad FROM alumno ORDER BY edad"))
 sql111.columns = ['Nombre','Apellido','Edad']
-st.table(sql111)
+#st.table(sql111)
