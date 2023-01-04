@@ -33,7 +33,7 @@ header_style = '''
 st.markdown(header_style, unsafe_allow_html=True)
 
 
-st.header('Indicadores de tu grupo')
+#st.header('Indicadores de tu grupo')
     
 
 @st.experimental_memo(ttl=600)
