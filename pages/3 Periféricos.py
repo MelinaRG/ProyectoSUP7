@@ -57,7 +57,7 @@ text = base.mark_text(radius=180, size=12).encode(text="Microfono:N")
 
 charte = pie + text
 
-st.altair_chart(charte, theme=None, use_container_width=True)
+st.altair_chart(charte, use_container_width=True)
 
 sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"))
 sql9.columns = ['Camara','Cantidad']
@@ -72,4 +72,4 @@ text2 = base2.mark_text(radius=180, size=12).encode(text="Camara:N")
 
 chart2 = pie2 + text2
 
-st.altair_chart(chart2, theme=None, use_container_width=True)
+st.altair_chart(chart2, use_container_width=True)
