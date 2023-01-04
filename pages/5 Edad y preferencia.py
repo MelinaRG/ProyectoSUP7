@@ -58,6 +58,6 @@ chart2 = alt.Chart(sql6).mark_bar(
         color='Interes:N'
     )
 
-st.altair_chart(chart2, theme=None, use_container_width=True)
+st.altair_chart(chart2, use_container_width=True)
 
 #st.table(sql6)
