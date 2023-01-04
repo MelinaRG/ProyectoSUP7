@@ -61,7 +61,7 @@ st.subheader('Microfono')
 
 sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
 sql8.columns = ['Microfono','Cantidad']
-sql8[sql8['Microfono' == True]] = 'Si'
+sql8[sql8['Microfono' == 'true']] = 'Si'
 
 st.table(sql8)
 
