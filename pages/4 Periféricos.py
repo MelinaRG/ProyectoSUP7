@@ -42,27 +42,34 @@ def run_query(query):
     cursor.execute(query)
     return cursor.fetchall()
 
+st.subheader('Microfono / Camara')
 
-#- cant de alumnos q poseen tanto mic como cam
-st.subheader('Uso de cámara y/o micrófono')
-sql4 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) as Tot FROM alumno GROUP BY mic ORDER BY Tot DESC"))
-sql4.columns = ['Micrófono','Cantidad']
-#st.table(sql4)
+sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
+sql8.columns = ['Microfono','Cantidad']
+st.table(sql8)
 
+base = alt.Chart(sql8).encode(
+        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Microfono:N", legend=None)
+    )
 
-st.subheader(f'La distribución de periféricos es la siguiente:')
-graf = alt.Chart(sql4).mark_bar().encode(
-    x='Micrófono', y='Cantidad', color= 'Micrófono', tooltip=['Micrófono', 'Cantidad']).properties(width=450).interactive()
-st.altair_chart(graf, theme=None, use_container_width=True)
+pie = base.mark_arc(outerRadius=150)
+text = base.mark_text(radius=180, size=12).encode(text="Microfono:N")
 
+charte = pie + text
 
-st.subheader('Uso de cámara y/o micrófono')
-sql44 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) as Tot FROM alumno GROUP BY cam ORDER BY Tot DESC"))
-sql44.columns = ['Cámara','Cantidad']
-st.table(sql44)
+st.altair_chart(charte, theme=None, use_container_width=True)
 
+sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"))
+sql9.columns = ['Camara','Cantidad']
+st.table(sql9)
 
-st.subheader(f'La distribución de periféricos es la siguiente:')
-graf1 = alt.Chart(sql44).mark_bar().encode(
-    x='Cámara', y='Cantidad', color= 'Cámara', tooltip=['Cámara', 'Cantidad']).properties(width=450).interactive()
-st.altair_chart(graf1, theme=None, use_container_width=True)
+base2 = alt.Chart(sql9).encode(
+        theta=alt.Theta("Cantidad:Q", stack=True), color=alt.Color("Camara:N", legend=None)
+    )
+
+pie2 = base2.mark_arc(outerRadius=150)
+text2 = base2.mark_text(radius=180, size=12).encode(text="Camara:N")
+
+chart2 = pie2 + text2
+
+st.altair_chart(chart2, theme=None, use_container_width=True)
