@@ -25,6 +25,6 @@ st.markdown('En el menú a tu izquierda puedes acceder a distintas métricas de 
 st.markdown("""
     Saber qué distribución de edades tienen, sus nacionalidades,
     dispositivo con el que se conectan y los periféricos que disponen.
-    También conocer qué temas prefieren hablar durante el SUP y algunos
-    datos extra que pueden servirte. 
+    También conocer sobre sus preferencias y algunos datos
+    extra que pueden servirte. 
 """)

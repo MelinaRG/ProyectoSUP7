@@ -57,7 +57,7 @@ graf = alt.Chart(sql33).mark_bar().encode(
     x='Dispositivo', y='Cantidad', color= 'Dispositivo', tooltip=['Dispositivo', 'Cantidad']).properties(width=450).interactive()
 st.altair_chart(graf, theme=None, use_container_width=True)
 
-st.subheader('Microfono / Camara')
+st.subheader('Microfono')
 
 sql8 = pd.DataFrame(run_query("SELECT mic, COUNT(mic) FROM alumno GROUP BY mic;"))
 sql8.columns = ['Microfono','Cantidad']
@@ -73,6 +73,8 @@ text = base.mark_text(radius=180, size=12).encode(text="Microfono:N")
 charte = pie + text
 
 st.altair_chart(charte, use_container_width=True)
+
+st.subheader('Camara')
 
 sql9 = pd.DataFrame(run_query("SELECT cam, COUNT(cam) FROM alumno GROUP BY cam;"))
 sql9.columns = ['Camara','Cantidad']
