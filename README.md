@@ -1,7 +1,8 @@
-
-# <h2 align=center> **Henry Hackathon 2022** </h2>
-
 # <h1 align=center>**`PROYECTO TA TOOLS`**</h1>
+
+# <h1 align=center> ![ia](https://emoji.slack-edge.com/TPRS7H4PN/henry-pm/4658c1bc769b53ae.png) </h1>
+# <h2 align=center> **Henry Hackathon 2022** 🚀 </h2>
+
 
 ##  :small_orange_diamond: **Introducción**
  
@@ -67,15 +68,15 @@ La plataforma que desarrollamos es un MVP, que tiene como principal objetivo fun
 ## :small_orange_diamond: **Herramientas y lenguajes utilizados**
 
 
-- Frontend: HTML <> , CSS # y JavaScript 
+- Frontend: HTML<a href="https://emoji.gg/emoji/HTML"><img src="https://cdn3.emoji.gg/emojis/HTML.png" width="20px" height="20px" alt="HTML"></a> CSS <a href="https://emoji.gg/emoji/css"><img src="https://cdn3.emoji.gg/emojis/css.png" width="20px" height="20px" alt="css"></a> JavaScript <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a>
 
-- Backend: Python :snake: y FastApi :zap:
+- Backend: Python <a href="https://emoji.gg/emoji/9794-python"><img src="https://cdn3.emoji.gg/emojis/9794-python.png" width="20px" height="20px" alt="python"></a> y FastApi :zap:
 
-- Base de Datos: PostgreSQL :bar_chart:
+- Base de Datos: PostgreSQL <a href="https://emoji.gg/emoji/6648_dataemoji"><img src="https://cdn3.emoji.gg/emojis/6648_dataemoji.png" width="20px" height="20px" alt="dataemoji"></a>
 
 - Métricas: Streamlit :chart_with_upwards_trend:
 
-- Render
+- Render :globe_with_meridians:
 
 - Docker :whale2:
 
