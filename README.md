@@ -21,13 +21,23 @@ La plataforma que desarrollamos es un MVP, que tiene como principal objetivo fun
 
  - Emmanuel Fernandez: FRONTEND
  
+    https://www.linkedin.com/in/emmanuel-fernandez-43a60a196/
+ 
  - Luciano Asencio: FORNTEND
+ 
+   https://www.linkedin.com/in/luciano-asencio/
  
  - Julio Postigo: MÉTRICAS Y ANALÍTICA
  
+   https://www.linkedin.com/in/julio-cesar-postigo-1a5707219/
+ 
  - Federico Olivieri: COORDINACIÓN Y BACKEND
  
+   https://www.linkedin.com/in/olivieri-federico/
+ 
  - Melina Griffo: BACKEND 
+ 
+   https://www.linkedin.com/in/melina-griffo-8398641b0/
  
  
 ## :small_orange_diamond: **Herramientas y lenguajes utilizados**
