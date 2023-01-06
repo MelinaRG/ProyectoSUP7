@@ -6,21 +6,45 @@
 
 ##  :small_orange_diamond: **Introducción**
  
-Les damos la bienvenida al repositorio del proyecto ***TA TOOLS*** que desarrollamos en el marco de Henry hackathon 2022, representando a la carrera de DATA SCIENCE.
+Les damos la bienvenida al repositorio del proyecto ***TA TOOLS*** que desarrollamos en el marco de Henry hackathon 2022, representando a la carrera de ***DATA SCIENCE***.
 
 
 ##  :small_orange_diamond: **Objetivos**
 
-La plataforma que desarrollamos es un MVP, que tiene como principal objetivo funcionar como un soporte de herramientas para nuevos Teaching Assistants y así poder ayudarlos a marcar el rumbo de los Stand Up a lo largo de toda la cursada del bootcamp.
+La plataforma que desarrollamos es un *MVP*, que tiene como principal objetivo funcionar como un soporte de herramientas para nuevos *Teaching Assistants* y así poder ayudarlos a marcar el rumbo de los *Stand Up* a lo largo de toda la cursada del bootcamp.
 
   
-## :small_orange_diamond: **Descripción del proyecto**
+## :small_orange_diamond: **Desarrollo del proyecto**
+
+Al tratarse de un proyecto grupal nos organizamos para trabajar divididos en 3 áreas de desarrollo: Frontend, Backend y Métricas. 
+
+En el presente repositorio se pueden observar las distintas ramas que fuimos utilizando:
+
+`main`
+- Contiene una carpeta llamada *app* con el desarrollo del backend y frontend.(El frontend en un principio se trabajo en una rama separada y despues se hizo el merge a main). 
+
+- También posee un contenedor de Docker en el archivo *Dockerfile* que utilizamos para realizar el deploy en Render.
+        
+`database`
+- Contiene un archivo *Dockerfile* que utilizamos para el deploy de la Base de Datos en Render.
+
+- Además tiene los *procedimientos* que necesitamos para conectar el Backend con la Base de Datos, a la hora de cargar el formulario de registro de TAs y el formulario de registro de alumnos.
+
+`GameDev`
+- Se utilizó para el desarrollo del juego *Code Rush*.
+
+`streamlit`
+- Se utilizó para el desarrollo de una app que permite la vizualización de diferentes métricas, relacionadas con el formulario de registro de alumnos.
+             
+- Posee un contenedor de docker y el deploy hecho en Render.
+
+
 
 
 ## :small_orange_diamond: **Funcionalidades de la Plataforma**
 
 
-1- `LOGIN`: el acceso a la plataforma es exclusivo para los TAs.
+1- `LOGIN`: El acceso a la plataforma es exclusivo para los TAs.
 
 2- `Formulario de Registro TAs`: Le permite al Administrador dar de alta a los TAs y luego brindarles las credenciales para que puedan ingresar a la plataforma.
 
@@ -43,7 +67,7 @@ La plataforma que desarrollamos es un MVP, que tiene como principal objetivo fun
 ## :small_orange_diamond: **Equipo de Trabajo**
 
 
- - Emmanuel Fernandez: FRONTEND
+ - Emmanuel Fernandez: FRONTEND y desarrollo del juego *Code Rush*
  
     https://www.linkedin.com/in/emmanuel-fernandez-43a60a196/
  
@@ -80,6 +104,8 @@ La plataforma que desarrollamos es un MVP, que tiene como principal objetivo fun
 
 - Docker :whale2:
 
+- Code Rush: Javascript  <a href="https://emoji.gg/emoji/8009-java-js"><img src="https://cdn3.emoji.gg/emojis/8009-java-js.png" width="20px" height="20px" alt="Java_Js"></a> y Firebase <img src="https://img.icons8.com/color/20/null/google-firebase-console.png"/>
+
 
 ## :small_orange_diamond: **Video Demostrativo**
 
@@ -88,4 +114,4 @@ La plataforma que desarrollamos es un MVP, que tiene como principal objetivo fun
 
 ## **Gracias por leer hasta el final! :grin:**
 
-Esperamos que hayas disfrutado aprendiendo sobre nuestro proyecto! No dudes en contactarnos para recibir más información, nos encantaria escuchar tus comentarios y sugerencias.
+Esperamos que hayas disfrutado aprendiendo sobre nuestro proyecto! No dudes en contactarnos para recibir más información, nos encantaría escuchar tus comentarios y sugerencias.
