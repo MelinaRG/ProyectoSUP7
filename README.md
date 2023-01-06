@@ -1,4 +1,4 @@
-# Proyecto SUP7 - TA Tools Game Development
+# TA Tools Game Development
 
 ![GameDEV_Banner](./src_/GameDEV%20banner.png)
 
