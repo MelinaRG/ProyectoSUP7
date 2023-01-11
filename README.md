@@ -26,7 +26,6 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 - También posee un contenedor de Docker en el archivo *Dockerfile* que utilizamos para realizar el deploy en Render.
         
 `database`
-- Contiene los *procedimientos* que necesitamos para conectar el Backend con la Base de Datos, a la hora de cargar el formulario de registro de TAs y el formulario de registro de alumnos.
 - Contiene los *procedimientos* necesarios para realizar las operaciones de carga a la Base de Datos.
 
 `GameDev`
