@@ -26,9 +26,7 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 - También posee un contenedor de Docker en el archivo *Dockerfile* que utilizamos para realizar el deploy en Render.
         
 `database`
-- Contiene un archivo *Dockerfile* que utilizamos para el deploy de la Base de Datos en Render.
-
-- Además tiene los *procedimientos* que necesitamos para conectar el Backend con la Base de Datos, a la hora de cargar el formulario de registro de TAs y el formulario de registro de alumnos.
+- Contiene los *procedimientos* necesarios para realizar las operaciones de carga y consulta a la Base de Datos.
 
 `GameDev`
 - Se utilizó para el desarrollo del juego *Code Rush*.
