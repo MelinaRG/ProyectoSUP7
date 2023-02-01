@@ -41,6 +41,8 @@ En el presente repositorio se pueden observar las distintas ramas que fuimos uti
 
 ## :small_orange_diamond: **Funcionalidades de la Plataforma**
 
+[Link Plataforma](https://data-henry.web.app/)
+[Link Plataforma](https://data-henry.firebaseapp.com/)
 
 1- `LOGIN`: El acceso a la plataforma es exclusivo para los TAs.
 
